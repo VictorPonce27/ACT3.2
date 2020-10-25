@@ -24,24 +24,6 @@ int stringMonthToNum(string month){
     return 0;
 }
 
-// DoublyLinkedList<IPs> dups(DoublyLinkedList<datos> &list){
-//     DoublyLinkedList<IPs> temp; 
-//     IPs tempData; 
-//     for(int i = 1; i<list.getSize(); i++){
-//         int count = 0; 
-//         for(int j = 1; j<list.getSize(); j++){
-//             if(list[i].get_ip() == list[j].get_ip()){
-//                 count++; 
-//             }
-//         }
-//         tempData = IPs(list[i].get_ip(),count); 
-//         if(!temp.inList(tempData)){
-//             temp.addFirst(tempData);
-//         }
-//     }
-//     return temp; 
-// }
-
 DoublyLinkedList<IPs> dups(DoublyLinkedList<datos> &list){
     DoublyLinkedList<IPs> temp; 
     IPs tempData; 
@@ -118,7 +100,6 @@ int main(){
     infoList = heap.sort(); 
     cout<<"checking duplicates"<<endl;
     heap2 = dups(infoList); 
-    cout<<"Sorting heap 2"<<endl;
     list2 = heap2.sort(); 
     list2.print();
     return 0;

@@ -48,9 +48,9 @@ void Heap<T>::downSort(int index) {
             }
             if (heap[max] > heap[pos]) {
                 swap(pos,max);
-                pos = max; // Para comparar el hijo con sus hijo
+                pos = max;
             } else {
-                pos = size; // Salir del ciclo
+                pos = size; 
             }
         }
         index--;

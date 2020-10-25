@@ -34,7 +34,6 @@ public:
     int findData(T data);
     int lowerBound(T data);
     int upperBound(T data);
-    // void sort();
     void clear();
     void print();
     void printReverse();
@@ -100,16 +99,6 @@ T& DoublyLinkedList<T>::operator[](int index) {
     throw out_of_range("Invalid position");
 }
 
-// template<class T>
-// void DoublyLinkedList<T>::operator=(initializer_list<T> list) {
-//     if (isEmpty()) {
-//         for (T i : list) {
-//             addLast(i);
-//         }
-//     } else {
-//         throw runtime_error("Error: DoublyLinkedList no esta vacia");   
-//     }
-// }
 
 template<class T>
 void DoublyLinkedList<T>::operator=(DoublyLinkedList<T> list) {
@@ -386,87 +375,6 @@ void DoublyLinkedList<T>::insertAt(int index, T newData) {
     throw out_of_range("Invalid position");
 }
 
-// template<class T>
-// void DoublyLinkedList<T>::merge(int ini, int mid, int fin) {
-//     Queue<T> listL;
-//     Queue<T> listR;
-//     int pos,f1,f2,i,j;
-//     pos = ini;
-//     f1 = mid - ini + 1;
-//     f2 = fin - mid;   
-//     for (i=1;i<=f1;i++) {
-//         listL.enqueue(getData(ini+i-1));
-//     }
-//     for (j=1;j<=f2;j++) {
-//         listR.enqueue(getData(mid+1+j-1));
-//     }
-//     i = 1;
-//     j = 1;
-//     while (i<=f1 && j<=f2) {
-//         if (listL.front()<=listR.front()) {
-//             updateAt(pos,listL.dequeue());
-//             i++;
-//         } else {
-//             updateAt(pos,listR.dequeue());
-//             j++;
-//         }
-//         pos++;
-//     }
-//     while (i<=f1) {
-//         updateAt(pos,listL.dequeue());
-//         i++;
-//         pos++;
-//     }
-//     while (j<=f2) {
-//         updateAt(pos,listR.dequeue());
-//         j++;
-//         pos++;
-//     }
-// }
-
-// template<class T>
-// void DoublyLinkedList<T>::mergeSort(int ini, int fin) {
-//     if (ini < fin) {
-//         int mid = (ini + fin) / 2;
-//         mergeSort(ini,mid);
-//         mergeSort(mid+1,fin);
-
-//         merge(ini,mid,fin);
-//     }
-// }
-
-// template<class T>
-// void DoublyLinkedList<T>::sort() {
-//     mergeSort(1,size);
-// }
-
-// template<class T>
-// int DoublyLinkedList<T>::findData(T data) {
-//     int posI = 1;
-//     int posF = size;
-//     int posM = (posI + posF) / 2;
-//     bool found = false;
-//     // sort();
-//     while (posI <= posF && !found) {
-//         if (data < getData(posM)) {
-//             posF = posM - 1;
-//         } else {
-//             if (data > getData(posM)) {
-//                 posI = posM + 1;
-//             } else {
-//                 if (data == getData(posM)) {
-//                     found = true;
-//                 }
-//             }
-//         }
-//         posM = (posI + posF) / 2;
-//     }
-//     if (found) {
-//         return posM;
-//     } else {
-//         throw runtime_error("Not found in list");
-//     }
-// }
 template<class T> 
 int DoublyLinkedList<T>::findData(T data){
     Node<T> *aux = head; 
